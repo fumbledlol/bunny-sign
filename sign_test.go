@@ -84,7 +84,7 @@ func TestPurgeClient(t *testing.T) {
 			return
 		}
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(`{"success":true}`))
+		_, _ = w.Write([]byte(`{"success":true}`))
 	}))
 	defer server.Close()
 
